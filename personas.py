@@ -14,6 +14,9 @@ class Repartidor(Persona):
     def __init__(self, nombre, tiempo_entrega):
         super().__init__(nombre)
         self.tiempo_entrega = tiempo_entrega  # Tiempo en segundos para entregar
+        self.energia = randint(75, 100)
+
+        #PENDIENTE Método repartir
 
 ### FIN PARTE 2.2 ###
 
@@ -22,6 +25,9 @@ class Cocinero(Persona):
     def __init__(self, nombre, habilidad):
         super().__init__(nombre)
         self.habilidad = habilidad  # Nivel de habilidad del cocinero
+        self.energia = randint(50, 80)
+
+        #PENDIENTE Método cocinar
 
 ### FIN PARTE 2.3 ###
 
@@ -30,15 +36,17 @@ class Cliente(Persona):
     def __init__(self, nombre, platos_preferidos):
         super().__init__(nombre)
         self.platos_preferidos = platos_preferidos  # Lista de platos favoritos
-
+        
+        #PENDIENTE recibir_pedido
+        
 ### FIN PARTE 2.4 ###
 
 if __name__ == "__main__":
-    print("personas.py: ")
 
     ### Código para probar que tu clase haya sido creada correctamente  ###
     ### Corre directamente este archivo para que este código se ejecute ### 
     try:
+        print("personas.py: ")
         PLATOS_PRUEBA = [
         "Jugo Natural",
         "Empanadas",

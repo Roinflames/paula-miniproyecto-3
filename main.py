@@ -1,5 +1,6 @@
 ##############################################################
 # from random import seed
+import random
 from random import seed, randint, choice
 from restaurante import Restaurante
 from personas import Cocinero, Repartidor, Cliente
@@ -8,19 +9,19 @@ from platos import Bebestible, Comestible
 
 ### INICIO PARTE 4 ###
 
-def crear_repartidores():
-    return [Repartidor(nombre=f"Repartidor_{i}", tiempo_entrega=randint(20, 30)) for i in range(3)]
+def crear_repartidores(): #OK
+    return [Repartidor(nombre=f"Repartidor_{i}", tiempo_entrega=randint(20, 30)) for i in range(2)]
 
-def crear_cocineros():
-    return [Cocinero(nombre=f"Cocinero_{i}", habilidad=randint(1, 10)) for i in range(3)]
+def crear_cocineros(): #OK
+    return [Cocinero(nombre=f"Cocinero_{i}", habilidad=randint(1, 10)) for i in range(5)]
 
-def crear_clientes():
+def crear_clientes(): #OK
+    cantidad_clientes = 5
     nombres = ["Cristian", "Antonio", "Francisca", "Juan", "Jorge", "Pablo", "Luis", "Sofia", "Macarena"]
     info_platos = ["Jugo Natural", "Empanadas", "Lomo a lo Pobre", "Papas Duqueza"]
-    return [Cliente(nombre=choice(nombres), platos_preferidos=[choice(info_platos)]) for _ in range(5)]
+    return [Cliente(nombre=choice(nombres), platos_preferidos=[choice(info_platos)]) for _ in range(cantidad_clientes)]
 
-def crear_restaurante():
-    print("crear_restaurante: ") #OK
+def crear_restaurante(): #OK
     info_platos = {
         "Pepsi": ["Pepsi", "Bebestible"],
         "Coca-Cola": ["Coca-Cola", "Bebestible"],
@@ -34,10 +35,10 @@ def crear_restaurante():
     }
 
     cocineros = crear_cocineros()
-    print(cocineros)
+    # print(len(cocineros))
     repartidores = crear_repartidores()
-    print(repartidores)
-    return Restaurante("Bon Appetit", info_platos, cocineros, repartidores)
+    # print(len(repartidores))
+    return Restaurante("La picá del profe'", info_platos, cocineros, repartidores)
 
 ### FIN PARTE 4 ###
 
@@ -61,14 +62,13 @@ INFO_PLATOS = {
 NOMBRES = ["Cristian", "Antonio", "Francisca", "Juan", "Jorge", "Pablo", "Luis", "Sofia", "Macarena"]
 
 if __name__ == "__main__":
-
     ### Código para probar que tu miniproyecto esté funcionando correctamente  ###
     ### Corre directamente este archivo para que este código se ejecute ###
-    seed("DSP")
+
     restaurante = crear_restaurante() # Crea el restaurante a partir de la función crear_restaurante()
-    # print(restaurante)
+    # print(restaurante != None)
     clientes = crear_clientes() # Crea los clientes a partir de la función crear_clientes()
-    # print(clientes)
+    # print(clientes != None)
 
     if restaurante != None and clientes != None:
         restaurante.recibir_pedidos(clientes) # Corre el método recibir_pedidos(clientes) para actualizar la calificación del restaurante

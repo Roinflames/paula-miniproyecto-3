@@ -12,12 +12,12 @@ class Restaurante:
         self.calificacion = 0  # Inicializa la calificación del restaurante
 
     def recibir_pedidos(self, clientes):
-        print("recibir_pedidos: ") #ok
-        print(clientes)
+        # print(clientes)
         calificaciones = []
         for cliente in clientes:
             # Calcular la calificación del pedido
             calificacion_pedido = sum(randint(1, 5) for _ in cliente.platos_preferidos) / len(cliente.platos_preferidos)
+            # print(calificacion_pedido)
             calificaciones.append(calificacion_pedido)
         # Calificación final
         self.calificacion = sum(calificaciones) / len(calificaciones) if calificaciones else 0
@@ -26,16 +26,16 @@ class Restaurante:
 
 
 if __name__ == "__main__":
-    print("restaurante.py: ")
 
     ### Código para probar que tu clase haya sido creada correctamente  ###
     ### Corre directamente este archivo para que este código se ejecute ###
     try:
+        print("restaurante.py: ")
         PLATOS_PRUEBA = {
         "Pepsi": ["Pepsi", "Bebestible"],
         "Mariscos": ["Mariscos", "Comestible"],
         }
-        un_restaurante = Restaurante("Bon Appetit", PLATOS_PRUEBA, [], [])
+        un_restaurante = Restaurante("La picá del profe'", PLATOS_PRUEBA, [], [])
         print(f"El restaurante {un_restaurante.nombre}, tiene los siguientes platos:")
         for plato in un_restaurante.platos.values():
             print(f" - {plato[1]}: {plato[0]}")
