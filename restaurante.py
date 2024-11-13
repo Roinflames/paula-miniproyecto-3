@@ -9,17 +9,16 @@ class Restaurante:
         self.platos = {nombre: detalles for nombre, detalles in platos.items()}
         self.cocineros = cocineros
         self.repartidores = repartidores
-        self.calificacion = 0  # Inicializa la calificación del restaurante
+        self.calificacion = 0
 
     def recibir_pedidos(self, clientes):
         # print(clientes)
         calificaciones = []
+        
         for cliente in clientes:
-            # Calcular la calificación del pedido
             calificacion_pedido = sum(randint(1, 5) for _ in cliente.platos_preferidos) / len(cliente.platos_preferidos)
-            # print(calificacion_pedido)
             calificaciones.append(calificacion_pedido)
-        # Calificación final
+        
         self.calificacion = sum(calificaciones) / len(calificaciones) if calificaciones else 0
 
 ### FIN PARTE 3 #
@@ -36,6 +35,7 @@ if __name__ == "__main__":
         "Mariscos": ["Mariscos", "Comestible"],
         }
         un_restaurante = Restaurante("La picá del profe'", PLATOS_PRUEBA, [], [])
+        print(un_restaurante.__dict__)
         print(f"El restaurante {un_restaurante.nombre}, tiene los siguientes platos:")
         for plato in un_restaurante.platos.values():
             print(f" - {plato[1]}: {plato[0]}")

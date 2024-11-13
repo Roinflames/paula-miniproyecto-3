@@ -1,0 +1,19 @@
+restaurante:
+  cocineros:
+    energia:
+      accion:
+    habilidad:
+      platos:
+        calidad:
+    platos:
+      bebestibles:
+        dificultad:
+      comestibles:
+        dificultad:
+      son_enviados:
+  repartidores:
+    tiempo:
+      clientes:
+        evaluacion:
+    energia:
+      accion:

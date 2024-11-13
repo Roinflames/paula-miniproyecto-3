@@ -1,27 +1,25 @@
 ##############################################################
 # from random import seed
-import random
 from random import seed, randint, choice
 from restaurante import Restaurante
 from personas import Cocinero, Repartidor, Cliente
-from platos import Bebestible, Comestible
 ## Si necesita agregar imports, debe agregarlos aquí arriba ##
 
 ### INICIO PARTE 4 ###
 
-def crear_repartidores(): #OK
+def crear_repartidores(): 
     return [Repartidor(nombre=f"Repartidor_{i}", tiempo_entrega=randint(20, 30)) for i in range(2)]
 
-def crear_cocineros(): #OK
+def crear_cocineros(): 
     return [Cocinero(nombre=f"Cocinero_{i}", habilidad=randint(1, 10)) for i in range(5)]
 
-def crear_clientes(): #OK
+def crear_clientes(): 
     cantidad_clientes = 5
     nombres = ["Cristian", "Antonio", "Francisca", "Juan", "Jorge", "Pablo", "Luis", "Sofia", "Macarena"]
     info_platos = ["Jugo Natural", "Empanadas", "Lomo a lo Pobre", "Papas Duqueza"]
     return [Cliente(nombre=choice(nombres), platos_preferidos=[choice(info_platos)]) for _ in range(cantidad_clientes)]
 
-def crear_restaurante(): #OK
+def crear_restaurante(): 
     info_platos = {
         "Pepsi": ["Pepsi", "Bebestible"],
         "Coca-Cola": ["Coca-Cola", "Bebestible"],
@@ -64,14 +62,12 @@ NOMBRES = ["Cristian", "Antonio", "Francisca", "Juan", "Jorge", "Pablo", "Luis",
 if __name__ == "__main__":
     ### Código para probar que tu miniproyecto esté funcionando correctamente  ###
     ### Corre directamente este archivo para que este código se ejecute ###
-
-    restaurante = crear_restaurante() # Crea el restaurante a partir de la función crear_restaurante()
-    # print(restaurante != None)
-    clientes = crear_clientes() # Crea los clientes a partir de la función crear_clientes()
-    # print(clientes != None)
+    seed("DSP")
+    restaurante = crear_restaurante()
+    clientes = crear_clientes() 
 
     if restaurante != None and clientes != None:
-        restaurante.recibir_pedidos(clientes) # Corre el método recibir_pedidos(clientes) para actualizar la calificación del restaurante
+        restaurante.recibir_pedidos(clientes) 
         print(
             f"La calificación final del restaurante {restaurante.nombre} "
             f"es {restaurante.calificacion}"

@@ -1,13 +1,18 @@
 # paula-miniproyecto-3
 
 Instrucciones Miniproyecto 3
+
 Descripción
+
 En este miniproyecto deberás construir un programa utilizando programación
 orientada a objetos que modele el funcionamiento de un restaurante.
 
-En el restaurante trabajan cocineros, los cuales preparan platos (bebestibles y
-comestibles) con diferentes niveles de dificultad de preparación. Además, los
-cocineros poseen niveles de habilidad que influyen en la calidad final de cada plato.
+En el restaurante trabajan cocineros, 
+los cuales preparan platos (bebestibles y comestibles) 
+con diferentes niveles de dificultad de preparación. 
+
+Además, los cocineros poseen niveles de habilidad que 
+influyen en la calidad final de cada plato.
 
 Los platos son enviados a los clientes del restaurante mediante un grupo de
 repartidores quienes también trabajan para el restaurante y deben entregar los
@@ -62,7 +67,7 @@ siguientes atributos adicionales:
     OK * calidad: Es un int que representa la calidad del bebestible. Debe inicializarse
     en un número entero aleatorio entre 3 y 8.
 
-1.3. Clase Comestible:
+OK 1.3. Clase Comestible:
 Esta clase debe heredar de la clase Plato. Además, esta clase debe poseer los
 siguientes atributos adicionales:
 
@@ -88,10 +93,10 @@ Esta clase debe poseer los siguientes atributos:
 Esta clase debe heredar de la clase Persona. Además, esta clase debe poseer los
 siguientes atributos adicionales:
 
-    * tiempo_entrega: Es un int que corresponde al tiempo base en segundos que
+    OK * tiempo_entrega: Es un int que corresponde al tiempo base en segundos que
     se demora en entregar un pedido. Se recibe como parámetro de inicialización
     (será un número entre 20 y 30).
-    * energia: Es un int que representa la energía del repartidor. Este valor se
+    OK * energia: Es un int que representa la energía del repartidor. Este valor se
     inicializa como un número aleatorio entre 75 y 100.
 
 También, debe tener (como mínimo) el siguiente método:
@@ -137,13 +142,19 @@ siguientes atributos adicionales:
 * platos_preferidos: Es una lista que contiene los nombres de los platos
 preferidos del cliente. Se recibe como parámetro de inicialización (pueden
 ser entre 1 y 5 platos).
+
 También debe tener (como mínimo) el siguiente método:
+
 * recibir_pedido(pedido, demora): Recibe como argumento el pedido, que es
 una lista de objetos de la clase Bebestible o Comestible, y la demora, que es
 un int que indica cuánto se demoró la entrega de los platos. Primero se debe
-definir una calificación que comienza en 10. Si la cantidad de platos en el
+definir una calificación que comienza en 10. 
+
+Si la cantidad de platos en el
 pedido es menor a la cantidad de platos_preferidos del cliente o si la demora
-es mayor o igual a 20, la calificación es dividida a la mitad. Luego, por cada
+es mayor o igual a 20, la calificación es dividida a la mitad. 
+
+Luego, por cada
 plato, el cliente cambiará su calificación dependiendo de la calidad del plato.
 Si la calidad del plato es mayor o igual a 11, a la calificación se le suma 1.5.
 Si la calidad es menor o igual a 8, la calificación disminuye en 3, no pudiendo
@@ -161,6 +172,7 @@ los siguientes atributos:
 
 * nombre: Es un str que corresponde al nombre del restaurante. Se recibe
 como parámetro de inicialización.
+
 * platos: Es un diccionario que posee todos los platos del restaurante, donde
 cada llave es el nombre de un plato y su valor es una lista con el nombre del
 plato y su tipo. Se recibe como parámetro de inicialización.
